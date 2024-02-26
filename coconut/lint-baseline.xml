@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues format="6" by="lint 7.2.2" type="baseline" client="gradle" dependencies="false" name="AGP (7.2.2)" variant="all" version="7.2.2">
+
+    <issue
+        id="ApplySharedPref"
+        message="Consider using `apply()` instead; `commit` writes its data to persistent storage immediately, whereas `apply` will handle it in the background"
+        errorLine1="        editor.putString(key, value).commit();"
+        errorLine2="                                     ~~~~~~~~">
+        <location
+            file="src/main/java/app/beelabs/com/codebase/support/util/CacheUtil.java"
+            line="23"
+            column="38"/>
+    </issue>
+
+    <issue
+        id="ApplySharedPref"
+        message="Consider using `apply()` instead; `commit` writes its data to persistent storage immediately, whereas `apply` will handle it in the background"
+        errorLine1="        editor.putInt(key, value).commit();"
+        errorLine2="                                  ~~~~~~~~">
+        <location
+            file="src/main/java/app/beelabs/com/codebase/support/util/CacheUtil.java"
+            line="29"
+            column="35"/>
+    </issue>
+
+    <issue
+        id="ApplySharedPref"
+        message="Consider using `apply()` instead; `commit` writes its data to persistent storage immediately, whereas `apply` will handle it in the background"
+        errorLine1="        editor.putBoolean(key, value).commit();"
+        errorLine2="                                      ~~~~~~~~">
+        <location
+            file="src/main/java/app/beelabs/com/codebase/support/util/CacheUtil.java"
+            line="35"
+            column="39"/>
+    </issue>
+
+    <issue
+        id="ApplySharedPref"
+        message="Consider using `apply()` instead; `commit` writes its data to persistent storage immediately, whereas `apply` will handle it in the background"
+        errorLine1="        sharedPref.edit().clear().commit();"
+        errorLine2="                                  ~~~~~~~~">
+        <location
+            file="src/main/java/app/beelabs/com/codebase/support/util/CacheUtil.java"
+            line="55"
+            column="35"/>
+    </issue>
+
+    <issue
+        id="ExifInterface"
+        message="Avoid using `android.media.ExifInterface`; use `androidx.media.ExifInterface` instead"
+        errorLine1="import android.media.ExifInterface;"
+        errorLine2="       ~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/app/beelabs/com/codebase/support/util/CameraUtil.java"
+            line="4"
+            column="8"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of io.reactivex.rxjava2:rxjava than 2.2.8 is available: 2.2.9"
+        errorLine1="    implementation &apos;io.reactivex.rxjava2:rxjava:2.2.8&apos;   // RX"
+        errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="69"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of com.github.chuckerteam.chucker:library than 3.5.2 is available: 4.0.0"
+        errorLine1="    debugImplementation &quot;com.github.chuckerteam.chucker:library:3.5.2&quot;"
+        errorLine2="                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="75"
+            column="25"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of com.squareup.okhttp3:okhttp than 4.11.0 is available: 4.12.0"
+        errorLine1="    implementation &apos;com.squareup.okhttp3:okhttp:4.11.0&apos;  // OkHttp"
+        errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="78"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="GradleDependency"
+        message="A newer version of com.squareup.okhttp3:logging-interceptor than 4.11.0 is available: 4.12.0"
+        errorLine1="    implementation &apos;com.squareup.okhttp3:logging-interceptor:4.11.0&apos; // OkHttp logging"
+        errorLine2="                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="build.gradle"
+            line="79"
+            column="20"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.color.color_white` appears to be unused"
+        errorLine1="    &lt;color name=&quot;color_white&quot;>#fff&lt;/color>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/color.xml"
+            line="4"
+            column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        message="The resource `R.style.CoconutDialogFullScreen` appears to be unused"
+        errorLine1="    &lt;style name=&quot;CoconutDialogFullScreen&quot;>"
+        errorLine2="           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/values/styles.xml"
+            line="3"
+            column="12"/>
+    </issue>
+
+</issues>
