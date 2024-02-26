@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'app.beelabs.com.codebase'
+    namespace 'app.beelabs.com.host'
     compileSdk 34
 
     defaultConfig {
-        applicationId "app.beelabs.com.codebase"
+        applicationId "app.beelabs.com.host"
         minSdk 19
         targetSdk 34
         versionCode 1
