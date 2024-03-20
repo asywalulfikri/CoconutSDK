@@ -2,11 +2,13 @@ package app.beelabs.com.codebase.base
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.util.Log
 import com.chuckerteam.chucker.api.ChuckerCollector
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.chuckerteam.chucker.api.RetentionManager
 import com.datatheorem.android.trustkit.pinning.OkHttp3Helper
 import okhttp3.CertificatePinner
+import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import java.security.*
@@ -162,27 +164,26 @@ open class BaseManager {
 
     @SuppressLint("NewApi")
     protected fun getHttpClient(context: Context, apiDomain : String, pinList : List<String>,allowUntrustedSSL: Boolean, timeout: Int,
-                                enableLoggingHttp: Boolean): OkHttpClient {
+                                enableLoggingHttp: Boolean,appVersion : String): OkHttpClient {
 
         val pattern = apiDomain.replace("https://","").replace("/","")
         val certificatePinner = CertificatePinner.Builder()
             .add(pattern, *pinList.map { "sha256/$it" }.toTypedArray())
             .build()
 
-
         val httpClient = OkHttpClient.Builder()
             .certificatePinner(certificatePinner)
             .addInterceptor(OkHttp3Helper.getPinningInterceptor())
-            /*.addInterceptor(Interceptor { chain ->
+            .addInterceptor(Interceptor { chain ->
                 val original = chain.request()
                 val request = original.newBuilder()
                     .header("X-Device", "Android")
-                    .header("X-Model", "Xiaomi MAX 2")
-                    .header("X-OS-Version", "12")
-                    .header("X-App-Version", "2.0.8")
+                    .header("X-Model", android.os.Build.MANUFACTURER + " "+android.os.Build.BRAND +" "+android.os.Build.MODEL)
+                    .header("X-OS-Version", android.os.Build.VERSION.SDK_INT.toString())
+                    .header("X-App-Version",appVersion)
                     .build()
                 chain.proceed(request)
-            })*/
+            })
             .followSslRedirects(false)
             .followRedirects(false)
 

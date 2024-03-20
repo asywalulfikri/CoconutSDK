@@ -1,9 +1,10 @@
 package app.beelabs.com.codebase.base;
 
+import androidx.fragment.app.Fragment;
+
+//import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.widget.Toast;
-
-import androidx.fragment.app.Fragment;
 
 import app.beelabs.com.codebase.base.response.BaseResponse;
 import app.beelabs.com.codebase.component.ProgressDialogComponent;

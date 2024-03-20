@@ -1,6 +1,7 @@
 package app.beelabs.com.codebase.di.manager;
 
 import android.content.Context;
+import android.util.Log;
 
 import java.util.List;
 
@@ -20,12 +21,12 @@ public class ApiManager extends BaseManager implements IApi {
 
 
     @Override
-    public Object initApiService(Context context, String apiDomain, List<String> pinnerList, boolean allowUntrusted, Class<IApiService> clazz, int timeout, boolean enableLoggingHttp) {
+    public Object initApiService(Context context, String apiDomain, List<String> pinnerList, boolean allowUntrusted, Class<IApiService> clazz, int timeout, boolean enableLoggingHttp, String appVersion) {
         if (api == null || !this.apiDomain.equals(apiDomain)) {
             Retrofit retrofit = new Retrofit.Builder()
                     .baseUrl(apiDomain)
                     .addConverterFactory(JacksonConverterFactory.create())
-                    .client(getHttpClient(context,apiDomain,pinnerList,allowUntrusted, timeout, enableLoggingHttp))
+                    .client(getHttpClient(context,apiDomain,pinnerList,allowUntrusted, timeout, enableLoggingHttp,appVersion))
                     .build();
             api = retrofit.create(clazz);
             this.apiDomain = apiDomain;

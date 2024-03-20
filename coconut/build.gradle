@@ -29,11 +29,11 @@ android {
     buildTypes {
 
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -48,7 +48,6 @@ android {
 
     buildFeatures {
         viewBinding true
-        dataBinding true
     }
 
     packagingOptions {
@@ -98,7 +97,7 @@ project.afterEvaluate {
                 from components.release
                 groupId = 'coconut'
                 artifactId = 'coconutSDK'
-                version = '0.0.1'
+                version = '0.0.2'
             }
         }
     }

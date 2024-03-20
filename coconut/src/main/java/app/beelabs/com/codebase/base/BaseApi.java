@@ -2,7 +2,6 @@ package app.beelabs.com.codebase.base;
 
 
 import android.content.Context;
-
 import java.util.List;
 
 import app.beelabs.com.codebase.di.IApi;
@@ -30,9 +29,9 @@ public class BaseApi {
     public void setApiDomain(String apiDomain) {
         this.apiDomain = apiDomain;
     }
-    public Object setupApi(AppComponent appComponent, Context context, List<String> pinnerList ,Class clazz, boolean allowUntrusted, int timeout, boolean enableLoggingHttp) {
+    public Object setupApi(AppComponent appComponent, Context context, List<String> pinnerList ,Class clazz, boolean allowUntrusted, int timeout, boolean enableLoggingHttp, String appVersion) {
         IApi api = appComponent.getApi();
-        return api.initApiService(context,getApiDomain(),pinnerList, allowUntrusted, clazz, timeout, enableLoggingHttp);
+        return api.initApiService(context,getApiDomain(),pinnerList, allowUntrusted, clazz, timeout, enableLoggingHttp,appVersion);
     }
 }
 
